@@ -1,0 +1,34 @@
+﻿<Window x:Class="UdpLogger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UdpLogger"
+        mc:Ignorable="d"
+        Title="UdpLogger" Width="1200">
+    <Grid>
+        <DockPanel Margin="10,0,982,0" Height="35" VerticalAlignment="Bottom">
+            <StatusBar DockPanel.Dock="Bottom">
+                <Label Width="88" Height="30" RenderTransformOrigin="0.5,0.059" Content="Status:" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+                <Label x:Name="label_status" Width="102" HorizontalAlignment="Center" Height="30" RenderTransformOrigin="0.5,0.059"/>
+            </StatusBar>
+        </DockPanel>
+        <Grid HorizontalAlignment="Left" Height="396" Margin="10,10,0,0" VerticalAlignment="Top" Width="200">
+            <Label Content="Port:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" FontWeight="Bold"/>
+            <TextBox x:Name="tb_port" HorizontalAlignment="Left" Height="23" Margin="80,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="bt_start" Content="Start" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="180" Click="Bt_start_Click"/>
+            <Label x:Name="lb_validate" Content="" HorizontalAlignment="Center" Margin="10,125,10,0" VerticalAlignment="Top" Height="70" Width="180" />
+            <CheckBox x:Name="cb_saveInFile" Content="Save In File" HorizontalAlignment="Left" Margin="14,200,0,0" VerticalAlignment="Top" Click="Cb_saveInFile_Click"/>
+            <Grid x:Name="grid_File" HorizontalAlignment="Left" Height="130" Margin="0,233,0,0" Visibility="Hidden" VerticalAlignment="Top" Width="200">
+                <Label Content="Folder" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.036,0.659"/>
+                <TextBox x:Name="tb_search" HorizontalAlignment="Left" Height="70" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+                <Button x:Name="bt_search" Content="Search" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="110" Click="Bt_search_Click"/>
+            </Grid>
+        </Grid>
+        <Grid>
+            <DataGrid x:Name="dg_messages" Margin="230,10,10,203"/>
+            <ListBox x:Name="lb_textBlank" Margin="230,0,10,10" Height="188" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Button x:Name="bt_clear" Content="Clear" HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Width="180" Click="Bt_clear_Click"/>
+    </Grid>
+</Window>
